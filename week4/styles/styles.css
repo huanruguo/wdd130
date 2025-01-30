@@ -1,0 +1,46 @@
+body {
+    background-color: #74a2d6;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    transition: color 0.3s ease;
+}
+h1:hover {
+    color: black;
+}
+.subtitle {
+    font-size: 14px;
+    color: white;
+}
+.author {
+    font-weight: bold;
+    color: white;
+}
+.list {
+    text-align: left;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+.quote {
+    font-size: 24px;
+    font-style: italic;
+    color: white;
+    margin-top: 20px;
+}
+.footer {
+    font-size: 14px;
+    color: white;
+}
+img {
+    width: 150px;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 5px;}
