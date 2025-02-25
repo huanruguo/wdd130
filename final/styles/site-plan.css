@@ -12,7 +12,6 @@ Fonts are separated by a | */
 
   /* change the values below to your chosen font(s) */
   --heading-font: "Montserrat";
-  --paragraph-font: Medium 500, Thin 100, Thin 100 Italic;
   --paragraph-font: 'Montserrat', sans-serif;
 
   /* these colors below should be chosen from among your palette colors above */
@@ -38,6 +37,7 @@ body {
   text-align: center;
 }
 img {
+  max-width: 1200px;
   display: block;
   margin: 0 auto;
 }
