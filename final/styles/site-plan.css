@@ -1,64 +1,69 @@
-/* if you are using any Google fonts change the font names below to your fonts. 
-Any spaces in your font name should be replaced with a +. 
-Fonts are separated by a | */
+/* Improved site-plan.css */
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,500;1,100&display=swap');
 
 :root {
-  /* change the values below to your colors from your palette */
-  --primary-color: #B4B8AB   ;
-  --secondary-color: #153243 ;
+  --primary-color: #B4B8AB;
+  --secondary-color: #153243;
   --accent1-color: #284B63;
   --accent2-color: #F4F9E9;
-
-  /* change the values below to your chosen font(s) */
-  --heading-font: "Montserrat";
-  --paragraph-font: 'Montserrat', sans-serif;
-
-  /* these colors below should be chosen from among your palette colors above */
-  --headline-color-on-white: #153243 ;  /* headlines on a white background */ 
-  --headline-color-on-color: white; /* headlines on a colored background */ 
-  --paragraph-color-on-white: #396E94; /* paragraph text on a white background */ 
-  --paragraph-color-on-color: white; /* paragraph text on a colored background */ 
-  --paragraph-background-color: #153243  ;
+  --heading-font: "Montserrat", sans-serif;
+  --paragraph-font: "Montserrat", sans-serif;
+  --headline-color-on-white: #153243;
+  --headline-color-on-color: white;
+  --paragraph-color-on-white: #396E94;
+  --paragraph-color-on-color: white;
+  --paragraph-background-color: #153243;
   --nav-link-color: #F4F9E9;
   --nav-background-color: #153243;
   --nav-hover-link-color: #F4F9E9;
   --nav-hover-background-color: #396E94;
 }
 
-
-/*  Look around below...but DON'T CHANGE ANYTHING! */
-
 body {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4em;
+  padding: 2em;
   font-size: 18px;
   text-align: center;
+  background-color: var(--accent2-color);
+  color: var(--secondary-color);
 }
+
 img {
-  max-width: 1200px;
+  width: 100%;
+  height: auto;
   display: block;
   margin: 0 auto;
+  border-radius: 8px;
 }
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading-font);
   color: var(--headline-color-on-white);
+  margin-bottom: 0.5em;
 }
+
 h2 {
   text-align: center;
 }
+
 hr {
   height: 3px;
   margin: 35px 0;
   background: var(--accent1-color);
+  border: none;
 }
+
 header {
   padding: 1em;
   text-align: center;
-  color: var(--headline-color-on-color);
   background-color: var(--paragraph-background-color);
+  color: var(--headline-color-on-color);
+  border-radius: 8px;
+  margin-bottom: 1em;
 }
+
 header > h1, header > h2 {
   color: var(--headline-color-on-color);
 }
@@ -66,111 +71,84 @@ header > h1, header > h2 {
 p {
   font-family: var(--paragraph-font);
   color: var(--paragraph-color-on-white);
-  padding: 1em;
+  padding: 0.5em 1em;
+  line-height: 1.5;
 }
+
 .colors {
   width: 100%;
   min-width: 350px;
   margin: 30px auto;
   text-align: center;
-}
-.colors th {
-  background-color: #999;
-}
-.colors td{
-  width: 25%;
-  height: 3em;
+  border-collapse: collapse;
 }
 
-.primary {
-  background-color: var(--primary-color);
+.colors th, .colors td {
+  padding: 10px;
+  border: 1px solid #ccc;
 }
-.secondary {
-  background-color: var(--secondary-color);
-}
-.accent1 {
-  background-color: var(--accent1-color);
-}
-.accent2{
-  background-color: var(--accent2-color);
-}
+
+.primary { background-color: var(--primary-color); }
+.secondary { background-color: var(--secondary-color); }
+.accent1 { background-color: var(--accent1-color); }
+.accent2 { background-color: var(--accent2-color); }
 
 p.colored {
   background-color: var(--paragraph-background-color);
   color: var(--paragraph-color-on-color);
+  padding: 1em;
+  border-radius: 4px;
 }
 
 nav {
   background-color: var(--nav-background-color);
   line-height: 3em;
-  text-align: center;
-  font-size: 1.2em;
-}
-nav  {
-  list-style-type: none;
   display: flex;
-
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1em;
 }
+
 nav a {
-  padding:1em;
+  padding: 10px 20px;
   min-width: 120px;
   text-decoration: none;
-  padding: 10px;
-
-}
-nav a:link, nav a:visited {
   color: var(--nav-link-color);
-}
-nav a:hover {
-  color: var(--nav-hover-link-color);
-  background-color: var(--nav-hover-background-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
+nav a:hover {
+  background-color: var(--nav-hover-background-color);
+  color: var(--nav-hover-link-color);
+}
+
+/* Sitemap Grid */
 .sitemap {
   display: grid;
-  justify-content: center;
-
-  grid-template-columns: repeat(6, 15%);
-  grid-template-rows: 3em 1.5em 1.5em 3em;
-  grid-template-areas: ". . home home . ."
-    ". . . top . ."
-    ". left left right right ."
-    "page2 page2 . . page3 page3";
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  margin: 20px auto;
+  max-width: 800px;
 }
+
 .sitemap > div {
-
-  text-align: center;
-
-}
-.sm-home {
-  grid-area: home;
   background-color: #ccc;
-  line-height: 3em;
-}
-.sm-page2 {
-  grid-area: page2;
-  background-color: #ccc;
-  line-height: 3em;
-}
-.sm-page3 {
-  grid-area: page3;
-  background-color: #ccc;
-  line-height: 3em;
+  padding: 10px;
+  border-radius: 4px;
+  line-height: 2em;
 }
 
-.top {
-  grid-area: top;
-  border-left: 1px solid;
-}
-
-.left {
-  grid-area: left;
-  border-top: 1px solid;
-  border-left: 1px solid;
-}
-
-.right {
-  grid-area: right;
-  border-top: 1px solid;
-  border-right: 1px solid;
+/* 响应式调整 */
+@media (max-width: 600px) {
+  body {
+    padding: 1em;
+    font-size: 16px;
+  }
+  .colors th, .colors td {
+    padding: 8px;
+  }
+  nav a {
+    padding: 8px 12px;
+    font-size: 0.9em;
+  }
 }
